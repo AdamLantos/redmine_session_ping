@@ -1,1 +1,3 @@
-Javascript session ping code goes here...
+<%= periodically_call_remote( 
+  :url => "/favicon.ico",
+  :method => "GET", :frequency  => 300 ) %>
