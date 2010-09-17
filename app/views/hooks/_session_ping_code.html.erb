@@ -1,3 +1,8 @@
-<%= periodically_call_remote( 
-  :url => "/favicon.ico",
-  :method => "GET", :frequency  => 300 ) %>
+<% if Setting.plugin_redmine_session_ping['enable'] == 'true' %>
+  <%= periodically_call_remote(
+    :url => Setting.plugin_redmine_session_ping['url'],
+    :method => "GET",
+    :frequency  => Setting.plugin_redmine_session_ping['frequency']) %>
+<% else %>
+  <!-- redmine_session_ping is disabled, you can enable it in the configuration -->
+<% end %>

@@ -1,0 +1,14 @@
+<p>
+  <%=label_tag 'settings[enable]', "Session ping enabled"%>
+  <%=check_box_tag 'settings[enable]', true, @settings['enable'] == "true" %>
+</p>
+
+<p>
+  <%=label_tag 'settings[url]', "Ping URL" %>
+  <%=text_field_tag 'settings[url]', @settings['url'] %>
+</p>
+
+<p>
+  <%=label_tag 'settings[frequency]', "Ping frequency" %>
+  <%=text_field_tag 'settings[frequency]', @settings['frequency'] %>
+</p>
